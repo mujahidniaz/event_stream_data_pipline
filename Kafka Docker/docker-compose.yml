@@ -65,4 +65,4 @@ services:
       - ksql-server
     entrypoint: /bin/sh
     tty: true
-
+    
