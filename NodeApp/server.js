@@ -99,6 +99,22 @@ server.get("/api/v1/pendingorderstable", async (req, res) => {
    res.json(response);
  });
 
+ server.get("/api/v1/agegroupordercount", async (req, res) => {
+
+   let response=[];
+   await mysql.GetAgeWiseOrderCount().then(function (results) {
+       
+   response=helper.getFormatedJsonForGraph(results);
+
+     })
+     .catch(function (err) {
+       console.log("Promise rejection error: " + err);
+     })
+ 
+  // console.log(response);
+   res.json(response);
+ });
+
  
  server.get("/api/v1/avgordertime", async (req, res) => {
 

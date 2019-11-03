@@ -71,10 +71,25 @@ var connection = mysql.createConnection({
       )}
   )}
 
+  GetAgeWiseOrderCount = function(){
+    let sql = "select x.status,x.ageText as ageGroup,count(*) count from (SELECT a.ageText,c.aggregate_id,'Cancelled' as status from (SELECT c.aggregate_id , CASE WHEN TIMESTAMPDIFF(YEAR,d.birthday,CURDATE()) > 40 THEN 'Elders' WHEN TIMESTAMPDIFF(YEAR,d.birthday,CURDATE()) < 25 THEN 'Teens' ELSE 'Adults' END AS ageText FROM customer_data d,customer_registered c where c.id=d.id) a,product_ordered p,product_data pd,order_cancelled c where c.aggregate_id=p.aggregate_id and p.id=pd.id and pd.customer_id=a.aggregate_id) x group by x.ageText union all select y.status,y.ageText as ageGroup,count(*) count from (SELECT a.ageText,c.aggregate_id,'Fulfilled' as status from (SELECT c.aggregate_id , CASE WHEN TIMESTAMPDIFF(YEAR,d.birthday,CURDATE()) > 40 THEN 'Elders' WHEN TIMESTAMPDIFF(YEAR,d.birthday,CURDATE()) < 25 THEN 'Teens' ELSE 'Adults' END AS ageText FROM customer_data d,customer_registered c where c.id=d.id) a,product_ordered p,product_data pd,order_fulfilled c where c.aggregate_id=p.aggregate_id and p.id=pd.id and pd.customer_id=a.aggregate_id) y group by y.ageText union all select y.status,y.ageText as ageGroup,count(*) count from (SELECT a.ageText,c.aggregate_id,'Declined' as status from (SELECT c.aggregate_id , CASE WHEN TIMESTAMPDIFF(YEAR,d.birthday,CURDATE()) > 40 THEN 'Elders' WHEN TIMESTAMPDIFF(YEAR,d.birthday,CURDATE()) < 25 THEN 'Teens' ELSE 'Adults' END AS ageText FROM customer_data d,customer_registered c where c.id=d.id) a,product_ordered p,product_data pd,order_declined c where c.aggregate_id=p.aggregate_id and p.id=pd.id and pd.customer_id=a.aggregate_id) y group by y.ageText";
+    return new Promise(function(resolve, reject){
+      connection.query(sql, 
+          function(err, rows){                                                
+              if(rows === undefined){
+                  reject(new Error("Error rows is undefined"));
+              }else{
+                resolve(JSON.stringify(rows));
+              }
+          }
+      )}
+  )}
+  
 
 module.exports = {
    totalCustomers,
    PendingOrders,
    ageWiseCustomers,
-   avgOrderCompletion
+   avgOrderCompletion,
+   GetAgeWiseOrderCount
   };

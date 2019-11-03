@@ -538,14 +538,15 @@ function dashboard(id, fData){
 </script>
 
 <script>
-var freqData=[
-{State:'Canceled',freq:{Teenage:4786, Adults:1319, Elders:249}},
-{State:'Fulfiled',freq:{Teenage:200, Adults:19, Elders:259}},
-{State:'declined',freq:{Teenage:4786, Adults:1319, Elders:249}},
-];
 
+    
+
+
+$.get( "/api/v1/agegroupordercount", function( data ) {
+var freqData=data;
 dashboard('#dashboard',freqData);
-
+ 
+});
 
 
 $.get( "/api/v1/agegroup", function( data1 ) {
@@ -620,6 +621,12 @@ $.get( "/api/v1/pendingorderstable", function( data ) {
 $('#pending_orders_ph').html(data.length);
   constructTable("#p_orders_tb",data);
 });
+
+
+setInterval(function() { // Do this
+        console.log('hello');
+      }, 2000); // Every one second
+
 
 </script>
 

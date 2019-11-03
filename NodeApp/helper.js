@@ -41,6 +41,24 @@ function getAgeGroupCount(results) {
         return data;
 }
 
+function getFormatedJsonForGraph (results)
+{
+    let response = [];
+    results =JSON.parse(results);
+    var offset=0;
+    var index=0;
+    for (let c = 0; c < 3; c++) {
+   
+    let row=  {State:results[index+offset].status,freq:{Teenage:results[index+2].count, Adults:results[index].count, Elders:results[index+1].count}}
+    response.push(row);
+    index=index+3; 
+    
+}
+
+return response;
+}
+
 module.exports = {
-    getAgeGroupCount
+    getAgeGroupCount,
+    getFormatedJsonForGraph
    };
