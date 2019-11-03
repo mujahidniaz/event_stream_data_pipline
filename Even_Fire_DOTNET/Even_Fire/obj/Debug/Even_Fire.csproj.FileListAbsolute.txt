@@ -1,0 +1,13 @@
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.csprojAssemblyReference.cache
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.Form1.resources
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.Properties.Resources.resources
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.csproj.GenerateResource.cache
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.csproj.CoreCompileInputs.cache
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\bin\Debug\Even_Fire.exe.config
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\bin\Debug\Even_Fire.exe
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\bin\Debug\Even_Fire.pdb
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.csproj.CopyComplete
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.exe
+C:\Users\MN186043\source\repos\Even_Fire\Even_Fire\obj\Debug\Even_Fire.pdb

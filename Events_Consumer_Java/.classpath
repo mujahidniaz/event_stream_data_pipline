@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_221"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="gson-2.8.5.jar"/>
+	<classpathentry kind="lib" path="kafka_2.12-2.3.1.jar"/>
+	<classpathentry kind="lib" path="kafka-clients-2.3.1.jar"/>
+	<classpathentry kind="lib" path="log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="scala-library-2.12.10.jar"/>
+	<classpathentry kind="lib" path="scala-logging_2.12-3.9.0.jar"/>
+	<classpathentry kind="lib" path="slf4j-api-1.7.26.jar"/>
+	<classpathentry kind="lib" path="slf4j-log4j12-1.7.26.jar"/>
+	<classpathentry kind="lib" path="mysql-connector-java-8.0.18.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
